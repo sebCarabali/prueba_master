@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google github popular repos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Google github popular repos</h1>
+        <div class="repos-container">
+            <% repos.forEach(repo=> { %>
+                <div class="rep">
+                    <h3 class="repo-title">
+                        <%= repo.name %>
+                    </h3>
+                    <p class="repo-description">
+                        <%= repo.description %>
+                    </p>
+                    <div class="option">
+                        <div class="stars">
+                            ⭐ <span class="number-stars">
+                                <%= repo.stargazers_count %>
+                            </span>
+                        </div>
+                        <a class="github-button" target="_blank" href="<%= repo.html_url %>">Ir a Github</a>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+</body>
+
+</html>
